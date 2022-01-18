@@ -1,0 +1,78 @@
+<!-- Navbar -->
+<?php $this->partial("layouts/navbar") ?>
+
+<main>
+  <div class="card m-2 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h1 class="card-title d-inline-block">Administradores</h1>
+            <div class="text-end d-inline-block m-2">
+              <!-- Botão para acionar modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAdministrador">
+                Novo Administrador
+              </button>
+              <button type="button" onclick="atualizarPagina()" class="btn btn-light shadow-sm">Atualizar</button>
+            </div>
+          </div>
+          <hr>
+      <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col" width="256px" class="text-center">opções</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($admInfo as $info): ?>
+              <tr>
+                <th scope="row"><?php echo $info['id'] ?></th>
+                <td><?php echo $info['usuario'] ?></td>
+                <td><?php echo $info['email'] ?></td>
+                <td>
+                  <button type="button" onclick="alterarSenha(this)" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalSenha">Alterar Senha</button>
+                  <button type="button" 
+                          class="btn btn-danger" 
+                          data-bs-toggle="modal" 
+                          data-bs-target="#modalExcluir"
+                          onclick="excluir(this)"
+                          >Excluir</button>
+                </td>
+              </tr>
+            <?php endforeach; ?>             
+            </tbody>
+          </table>
+    </div>
+  </div>
+</main>
+
+<!-- Arquivos javascript -->
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/mascara.js"); ?>
+
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/verificarSenha.js"); ?>
+
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/script.js"); ?>
+
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/cadastrarAdministrador.js"); ?>
+
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/excluirAdm.js"); ?>
+
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/dadosForm.js"); ?>
+
+<!-- Cadastrar Cliente Modal -->
+<?php $this->partial("layouts/modalCadastrarCliente") ?>
+
+<!-- Editar Cliente Modal -->
+<?php $this->partial("layouts/modalEditarCliente") ?>
+
+<!-- Cadastrar administrador Modal -->
+<?php $this->partial("layouts/modalCadastrarAdministrador") ?>
+
+<!-- Alterar senha administrador Modal -->
+<?php $this->partial("layouts/modalAlterarSenha") ?>
+
+<!-- Alterar senha administrador Modal -->
+<?php $this->partial("layouts/modalExcluirAdministrador") ?>
+
+

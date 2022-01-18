@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="mt-5 p-4 bg-white shadow" style="width: 400px;">
+    <h1 class="modal-title text-center">Entrar</h1>
+    <form action="entrar/" method="POST">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Usuário</label>
+        <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Senha</label>
+        <input type="password" name="senha" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="text-center m-3">
+        <button type="submit" class="btn btn-primary text-center w-50">Entrar</button>
+      </div>
+    </form>
+    <?php if(isset($teste)){
+      echo "<div class='alert alert-warning' role='alert'>".$teste."</div>";
+    }
+    ?>
+  </div>
+</div>

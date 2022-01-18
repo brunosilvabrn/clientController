@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Sistema de Cadastro</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Clientes
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCadastro">
+            Novo Cliente
+          </button></li>
+            <li><a class="dropdown-item" href="painel">Lista de Clientes</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Administrador
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalAdministrador">
+            Novo Administrador
+          </button></li>
+          <li><a href="administradores" class="dropdown-item">Lista de Administradores</a></li>
+          </ul>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        Administrador: <?php echo $usuario ?>
+      </span>
+      <a href="painel/sair" class="btn btn-danger ml-auto" style="margin-left: auto;">Sair</a>
+    </div>
+  </div>
+</nav> 

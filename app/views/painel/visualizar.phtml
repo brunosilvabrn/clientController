@@ -1,0 +1,54 @@
+<!-- Navbar -->
+<?php $this->partial("layouts/navbar") ?>
+
+<main>
+      <div class="card m-2 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h1 class="card-title d-inline-block">Informações</h1>
+            <div class="text-end d-inline-block m-2">
+              <!-- Botão para acionar modal -->
+              <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar">
+                Editar
+              </button> -->
+              <a href="../../painel" type="button" class="btn btn-info">Voltar</a>
+            </div>
+          </div>
+          <hr>       
+          <!-- Informacoes -->
+          <?php foreach($clienteInfo as $info) : ?>
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-light">Nome:</li>
+              <li class="list-group-item"><?php echo $info['nome'] ?></li>
+              <li class="list-group-item bg-light">Cpf:</li>
+              <li class="list-group-item"><?php echo $info['cpf'] ?></li>
+              <li class="list-group-item bg-light">Telefone:</li>
+              <li class="list-group-item"><?php echo $info['telefone'] ?></li>
+              <li class="list-group-item bg-light">Email:</li>
+              <li class="list-group-item"><?php echo $info['email'] ?></li>
+            </ul>
+          </div>
+        <?php endforeach; ?>
+        </div>
+      </div>
+    </main>
+
+
+<!-- Cadastrar Cliente Modal -->
+<?php $this->partial("layouts/modalCadastrarCliente") ?>
+
+<!-- Editar Cliente Modal -->
+<?php $this->partial("layouts/modalEditarCliente") ?>
+
+<!-- Cadastrar administrador Modal -->
+<?php $this->partial("layouts/modalCadastrarAdministrador") ?>
+
+<!-- Arquivos javascript -->
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/mascara.js"); ?>
+
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/verificarSenha.js"); ?>
+
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/script.js"); ?>
+
+<?php echo \Phalcon\Tag::javascriptInclude("public/js/dadosForm.js"); ?>

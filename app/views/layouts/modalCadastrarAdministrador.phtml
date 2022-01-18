@@ -1,0 +1,40 @@
+<!-- Modal -->
+<div class="modal fade" id="modalAdministrador" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Novo administrador</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="administradores/cadastrar" id="admForm">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Usuário</label>
+            <input type="text" name="usuario" class="form-control"  required>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Email</label>
+            <input type="email" name="email" class="form-control"  required>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Senha</label>
+            <input type="password" name="senha" class="form-control verificar" id="senha" required>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Confirmar Senha</label>
+            <input type="password" name="confirmarSenha" class="form-control verificar" id="confirmarSenha" required>
+          </div>            
+      </div>
+      <div class="modal-footer">
+        <div class="square" id="square"></div>
+        <div id="options">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" id="cadAdm" class="btn btn-primary verificar" value="">cadastrar</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
